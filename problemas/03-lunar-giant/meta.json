@@ -1,0 +1,37 @@
+{
+ "order": 3,
+ "slug": "lunar-giant",
+ "title": "Lunar Giant",
+ "folder": "03-lunar-giant",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/lunar-giant/",
+ "kind": "standard",
+ "badges": [
+  "AI prohibited",
+  "Locked editor"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 80.06,
+ "timeLimitMs": 1000,
+ "timeLimitShownMs": 2500,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "5\n1\n3\n5\n8\n13\n",
+   "output": "148\n45\n68\n208\n195\n"
+  },
+  {
+   "index": 2,
+   "input": "5\n34\n55 89\n233 610\n0 0 0 0 144\n987\n",
+   "output": "158\n195\n73\n0\n122\n"
+  },
+  {
+   "index": 3,
+   "input": "5\n0 5\n5 0\n13 1 1\n21 21 34\n2 3 5 8 13\n",
+   "output": "81\n68\n139\n127\n147\n"
+  }
+ ],
+ "attachments": [
+  "transitions.tsv"
+ ]
+}

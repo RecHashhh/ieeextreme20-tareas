@@ -1,0 +1,32 @@
+{
+ "order": 18,
+ "slug": "deliveries-in-the-kingdom",
+ "title": "Deliveries in the Kingdom",
+ "folder": "18-deliveries-in-the-kingdom",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/deliveries-in-the-kingdom/",
+ "kind": "standard",
+ "badges": [
+  "AI prohibited",
+  "Locked editor"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 75.91,
+ "timeLimitMs": 1000,
+ "timeLimitShownMs": 2500,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "4 4\n1 2\n2 3\n3 4\n1 4\n3\n1 3 2\n1 3 4\n2 4 1\n",
+   "output": "Sim\nSim\nSim\n",
+   "comment": "In this example, each delivery has a route that avoids the specified city."
+  },
+  {
+   "index": 2,
+   "input": "6 5\n1 2\n2 3\n3 4\n4 5\n3 6\n2\n1 6 4\n1 5 3\n",
+   "output": "Sim\nNao\n",
+   "comment": "In this example, the first delivery can follow $$1 \\to 2 \\to 3 \\to 6$$, avoiding city $$4$$. In the second delivery, city $$3$$ is an articulation point: every path from $$1$$ to $$5$$ passes through it.\r\n\r\nIf $$C=D$$ and $$C\\ne E$$, the answer is `Sim`: Pedro is already at the destination and does not need to traverse any railway connections."
+  }
+ ],
+ "attachments": []
+}

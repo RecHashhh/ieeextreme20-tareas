@@ -1,0 +1,79 @@
+Flip 7 is a card game that recently became very popular.
+The game has $$N$$ players and a deck containing, for each value $$i$$ from $$1$$ to $$12$$, exactly $$i$$ cards with value $$i$$. That is:
+- $$1$$ card of value $$1$$.
+- $$2$$ cards of value $$2$$.
+- $$3$$ cards of value $$3$$.
+- ...
+- $$12$$ cards of value $$12$$.
+#2 Game rules
+The game is played in rounds. On their turn, each player may choose one of two actions:
+*Draw*
+- The player draws the top card of the deck.
+- The value of the card is added to the score accumulated in the current round.
+- If the player draws a card whose value they have already obtained in this same round, they *bust* and lose all the points accumulated in the round.
+- The cards a player drew in the round, busted or not, stay on the table until the round ends.
+*Stop*
+- The player ends their participation in the current round.
+- They secure the points accumulated so far.
+- They do not play again until all players have stopped or busted.
+- A new round starts when every player has finished the current round.
+*Turn order*
+- A round starts with player $$0$$. The turn then passes to the next player in the order of their numbers, coming back to player $$0$$ after player $$N - 1$$, and skipping the players who have stopped or busted.
+- The round ends when every player has stopped or busted.
+*The deck*
+- As soon as the last card of the deck is drawn, the discarded cards, that is every card drawn in earlier rounds but none of the cards on the table in the current round, are shuffled to form a new deck. So the deck is never empty when a player has to decide.
+- There is always a card to draw.
+*End of the game*
+- The game ends at the end of the round in which some player reaches $$240$$ points or more: that round is played to its end.
+#2 Problem
+Mattia is playing with his friends on New Year's Eve and wants help deciding his best move.
+On each of his turns, he wants to choose the action ( *draw* or *stop* ) that maximizes the *expected value of his score at the end of the round*, taking into account:
+- The cards he has already drawn in the current round;
+- The cards that have already been revealed in the round (by any player);
+- The composition of the remaining deck, which he knows exactly.
+Mattia completely ignores global strategic factors, such as the other players' scores or the impact on future rounds. He only considers maximizing the expected value of the current round.
+#2 Interaction
+This is an interactive problem.
+The first line of input contains two integers $$N$$ and $$P$$: the number of players and Mattia's position in the turn order. Players are numbered from $$0$$ to $$N-1$$, so Mattia is player $$P$$.
+After that, the actions of the game are given one per line, in the order in which they happen. Players that have already stopped or busted in the current round do not act again until the next round.
+- If another player $$i$$ stops, you receive the line `i 0`.
+- If another player $$i$$ draws a card of value $$c$$, you receive the line `i 1 c`.
+- On Mattia's turn you receive only the line `P`. You must then print `0` if Mattia stops or `1` if Mattia draws. If you print `1`, you will receive a line with the value $$c$$ of the card he drew.
+When the game ends, you will receive the line `-1` and must terminate your program.
+Remember to flush the output after each answer.
+#2 Constraints and notes
+- $$2 \le N \le 10$$.
+- $$0 \le P < N$$.
+- Mattia draws if and only if the expected score after drawing one more card and then stopping is strictly greater than his current score in the round. In case of equality, he stops. Every card of the remaining deck is equally likely to be drawn, and a bust counts as a score of $$0$$.
+#2 Example
+The beginning of a game with $$2$$ players in which Mattia is player $$1$$. The judge's lines, with your program's answers after each of Mattia's turns:
+```
+2 1
+0 1 5
+1
+                1
+10
+0 1 5
+1
+                1
+4
+1
+                1
+12
+1
+                0
+0 1 7
+1
+                1
+6
+0 0
+...
+-1
+```
+1. Player $$0$$ acts first and draws a $$5$$.
+1. Mattia has no cards, so drawing can only gain: he draws, and gets a $$10$$.
+1. Player $$0$$ draws a second $$5$$ and busts. Their round is over, and the two $$5$$s stay on the table until the round ends.
+1. Mattia holds a $$10$$. Of the $$75$$ cards left in the deck, $$9$$ are $$10$$s, which would bust him; the other $$66$$ add up to $$540$$. His expected score after one more draw is $$\frac{66 \cdot 10 + 540}{75} = 16 > 10$$, so he draws, and gets a $$4$$.
+1. With $$14$$ from a $$10$$ and a $$4$$, $$12$$ of the $$74$$ cards left would bust him, and the expected score after one more draw is $$\frac{62 \cdot 14 + 524}{74} \approx 18.8 > 14$$: he draws, and gets a $$12$$.
+1. With $$26$$, $$23$$ of the $$73$$ cards left would bust him, and the expected score is $$\frac{50 \cdot 26 + 380}{73} \approx 23.0 < 26$$: he stops, with $$26$$ points.
+1. Both players are done, so a new round starts with player $$0$$, who draws a $$7$$. Mattia draws, and gets a $$6$$. Player $$0$$ stops, securing $$7$$ points. The game goes on until a round ends with a player at $$240$$ points or more, and then the line `-1` arrives.

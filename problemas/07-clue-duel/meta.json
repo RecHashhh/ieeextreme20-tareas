@@ -1,0 +1,31 @@
+{
+ "order": 7,
+ "slug": "clue-duel",
+ "title": "Clue Duel",
+ "folder": "07-clue-duel",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/clue-duel/",
+ "kind": "game",
+ "badges": [
+  "Game",
+  "AI allowed",
+  "Recorded"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 66.88,
+ "timeLimitMs": 1000,
+ "timeLimitShownMs": 2500,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "5 7 9 100 1 1\n",
+   "output": ""
+  },
+  {
+   "index": 2,
+   "input": "5 7 9 100 1 2\n",
+   "output": ""
+  }
+ ],
+ "attachments": []
+}

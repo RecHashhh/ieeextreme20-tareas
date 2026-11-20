@@ -1,0 +1,32 @@
+{
+ "order": 11,
+ "slug": "overclock-in-night-city",
+ "title": "Overclock in Night City",
+ "folder": "11-overclock-in-night-city",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/overclock-in-night-city/",
+ "kind": "standard",
+ "badges": [
+  "AI prohibited",
+  "Locked editor"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 67.79,
+ "timeLimitMs": 1000,
+ "timeLimitShownMs": 2500,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "1\n5\n",
+   "output": "2\n",
+   "comment": "In this example there is a single squad with $$5$$ soldiers. Below, $$\\xrightarrow{-t}$$ means David takes out $$t$$ soldiers and $$\\xrightarrow{\\times 2}$$ means Smasher doubles the squad.\r\n- With $$X = 1$$, the squad grows forever, even if David takes out as many soldiers as he can on every turn: $$5 \\xrightarrow{-1} 4 \\xrightarrow{\\times 2} 8 \\xrightarrow{-2} 6 \\xrightarrow{\\times 2} 12 \\xrightarrow{-3} 9 \\xrightarrow{\\times 2} 18 \\xrightarrow{-4} \\cdots$$.\r\n- With $$X = 2$$, the simulation ends after David's fourth turn: $$5 \\xrightarrow{-2} 3 \\xrightarrow{\\times 2} 6 \\xrightarrow{-3} 3 \\xrightarrow{\\times 2} 6 \\xrightarrow{-4} 2 \\xrightarrow{\\times 2} 4 \\xrightarrow{-4} 0$$."
+  },
+  {
+   "index": 2,
+   "input": "3\n5 1 5\n",
+   "output": "4\n",
+   "comment": "In this example, David can only touch one squad on his first turn, so one of the squads with $$5$$ soldiers is left untouched.\r\n- With $$X = 3$$, David's next limit is only $$4$$. Smasher doubles that squad and keeps doubling it on every turn. Even if David spends every turn on it, it never empties: $$5 \\xrightarrow{\\times 2} 10 \\xrightarrow{-4} 6 \\xrightarrow{\\times 2} 12 \\xrightarrow{-5} 7 \\xrightarrow{\\times 2} 14 \\xrightarrow{-6} \\cdots$$.\r\n- With $$X = 4$$, David takes out $$4$$ soldiers from one of the squads with $$5$$, leaving squads of sizes $$1$$, $$1$$ and $$5$$. It can be shown that from there David can force the simulation to end, no matter how Smasher plays.\r\n"
+  }
+ ],
+ "attachments": []
+}

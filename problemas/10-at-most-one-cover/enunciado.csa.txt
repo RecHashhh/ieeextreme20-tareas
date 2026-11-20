@@ -1,0 +1,45 @@
+There is a strip of $$m$$ cells numbered from $$1$$ to $$m$$ from left to right. You are given $$n$$ segments. The $$j$$-th segment is described by four integers $$l_j, r_j, p_j, q_j$$. It covers all cells from $$l_j$$ to $$r_j$$ inclusive and exists with probability $$\frac{p_j}{q_j}$$. All segments exist independently of each other.
+
+
+
+For each cell $$i$$ from $$1$$ to $$m$$, find the probability that cell $$i$$ is covered by at most one of the existing segments.
+
+
+
+It can be shown that each answer can be written as an irreducible fraction $$\frac{x}{y}$$ where $$y \not\equiv 0 \pmod{998244353}$$. Print $$x \cdot y^{-1} \bmod 998244353$$.
+
+
+
+#2 Standard input
+
+
+
+The first line contains two integers $$n$$ and $$m$$.
+
+
+
+The $$j$$-th of the next $$n$$ lines contains four integers $$l_j, r_j, p_j, q_j$$.
+
+
+
+#2 Standard output
+
+
+
+Print $$m$$ integers. The $$i$$-th of them should be the answer for cell $$i$$ modulo $$998244353$$.
+
+
+
+#2 Constraints and notes
+
+
+
+- $$1 \le n, m \le 2 \cdot 10^5$$.
+
+- $$1 \le l_j \le r_j \le m$$.
+
+- $$0 \le p_j \le q_j$$.
+
+- $$1 \le q_j < 998244353$$.
+
+<TaskExamples />

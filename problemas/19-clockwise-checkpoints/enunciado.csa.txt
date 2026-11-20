@@ -1,0 +1,27 @@
+A circular track has length $$C$$. Checkpoints are placed at distinct integer positions from $$0$$ to $$C-1$$. Starting at a checkpoint, you travel clockwise until you reach the next checkpoint. After the last checkpoint in clockwise order, the next checkpoint is the first one after wrapping around.
+
+Find the longest such checkpoint-to-checkpoint segment. If several segments have the same length, choose the one whose starting checkpoint has the smallest position.
+
+#2 Standard input
+
+The first line contains two integers $$n$$ and $$C$$.
+
+The second line contains $$n$$ distinct integers $$p_1, p_2, \ldots, p_n$$, the checkpoint positions. They may appear in any order.
+
+#2 Standard output
+
+Print two integers: the length of the longest clockwise segment and the position of its starting checkpoint.
+
+#2 Constraints and notes
+
+- $$1 \le n \le 2\cdot 10^5$$.
+
+- $$1 \le C \le 10^9$$.
+
+- $$n \le C$$.
+
+- $$0 \le p_i < C$$ for each valid $$i$$.
+
+If there is only one checkpoint, the segment starts there, goes once around the track, and has length $$C$$.
+
+<TaskExamples />

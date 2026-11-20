@@ -1,0 +1,26 @@
+{
+ "order": 6,
+ "slug": "encrypted-thresholds",
+ "title": "Encrypted Thresholds",
+ "folder": "06-encrypted-thresholds",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/encrypted-thresholds/",
+ "kind": "standard",
+ "badges": [
+  "AI prohibited",
+  "Locked editor"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 64.91,
+ "timeLimitMs": 1000,
+ "timeLimitShownMs": 2500,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "4 5\n1 2 3\n2 3 5\n2 4 6\n0\n1\n4\n8\n1048576\n",
+   "output": "0\n0\n2\n6\n6\n",
+   "comment": "In this example, the path XOR values of the six unordered pairs are $$3, 6, 5, 5, 6, 3$$. Therefore, two pairs have value less than $$4$$, and all six have value less than $$8$$."
+  }
+ ],
+ "attachments": []
+}

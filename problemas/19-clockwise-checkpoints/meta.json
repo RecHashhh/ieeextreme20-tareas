@@ -1,0 +1,30 @@
+{
+ "order": 19,
+ "slug": "clockwise-checkpoints",
+ "title": "Clockwise Checkpoints",
+ "folder": "19-clockwise-checkpoints",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/clockwise-checkpoints/",
+ "kind": "standard",
+ "badges": [
+  "AI prohibited",
+  "Locked editor"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 72.97,
+ "timeLimitMs": 1000,
+ "timeLimitShownMs": 2500,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "3 12\n9 0 4\n",
+   "output": "5 4\n"
+  },
+  {
+   "index": 2,
+   "input": "2 10\n6 1\n",
+   "output": "5 1\n"
+  }
+ ],
+ "attachments": []
+}

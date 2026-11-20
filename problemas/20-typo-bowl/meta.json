@@ -1,0 +1,30 @@
+{
+ "order": 20,
+ "slug": "typo-bowl",
+ "title": "Typo Bowl",
+ "folder": "20-typo-bowl",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/typo-bowl/",
+ "kind": "standard",
+ "badges": [
+  "AI prohibited",
+  "Locked editor"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 76.75,
+ "timeLimitMs": 1000,
+ "timeLimitShownMs": 2500,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "2\nGreen Day\nGreen Bay\nDallas Cowboys\nThe Weeknd\nMinnesota Vikings\nNew York Giants\n",
+   "output": "Green Bay x Minnesota Vikings\n"
+  },
+  {
+   "index": 2,
+   "input": "3\nABC\nABD\nAB\nAABC\nXYZ\nXYY\nXY\n",
+   "output": "ABD x XYZ\n"
+  }
+ ],
+ "attachments": []
+}

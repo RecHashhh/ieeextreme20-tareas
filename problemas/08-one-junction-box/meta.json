@@ -1,0 +1,30 @@
+{
+ "order": 8,
+ "slug": "one-junction-box",
+ "title": "One Junction Box",
+ "folder": "08-one-junction-box",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/one-junction-box/",
+ "kind": "standard",
+ "badges": [
+  "AI prohibited",
+  "Locked editor"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 69.73,
+ "timeLimitMs": 1000,
+ "timeLimitShownMs": 2500,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "4 5\n",
+   "output": "168\n"
+  },
+  {
+   "index": 2,
+   "input": "6 7\n",
+   "output": "40480\n"
+  }
+ ],
+ "attachments": []
+}

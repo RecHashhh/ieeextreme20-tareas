@@ -1,0 +1,8 @@
+EXP_0005, 2, Undergraduate, 5, Electromagnetism, 2
+Expert Id, Name, Domains, Education, Years of Experience, Time Zone
+EXP_0001, Hans Mueller, Electromagnetism; Physics; Quantum Mechanics;, Masters, 10, -02:00
+EXP_0002, Oliver Benoit, Materials; Lasers;, PhD, 9, -02:00
+EXP_0003, Priya Sharma, Electromagnetism; Physics; Hysteresis;, Masters, 12, -05:00
+EXP_0004, Elena Rostova, Electromagnetism; Mathematics;, Masters, 15, -02:00
+EXP_0005, David Miller, Computer Programming; Electromagnetism; Image transformation;, Masters, 5, +00:00
+EXP_0006, Lin Wei, Electromagnetism;, PhD, 8, -01:00

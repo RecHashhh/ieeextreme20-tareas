@@ -1,0 +1,26 @@
+{
+ "order": 4,
+ "slug": "ieee-global-expert-selection-challenge",
+ "title": "IEEE Global Expert Selection Challenge",
+ "folder": "04-ieee-global-expert-selection-challenge",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/ieee-global-expert-selection-challenge/",
+ "kind": "standard",
+ "badges": [
+  "AI prohibited",
+  "Locked editor"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 75.73,
+ "timeLimitMs": 4000,
+ "timeLimitShownMs": 10000,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "EXP_0005, 2, Undergraduate, 5, Electromagnetism, 2\nExpert Id, Name, Domains, Education, Years of Experience, Time Zone\nEXP_0001, Hans Mueller, Electromagnetism; Physics; Quantum Mechanics;, Masters, 10, -02:00\nEXP_0002, Oliver Benoit, Materials; Lasers;, PhD, 9, -02:00\nEXP_0003, Priya Sharma, Electromagnetism; Physics; Hysteresis;, Masters, 12, -05:00\nEXP_0004, Elena Rostova, Electromagnetism; Mathematics;, Masters, 15, -02:00\nEXP_0005, David Miller, Computer Programming; Electromagnetism; Image transformation;, Masters, 5, +00:00\nEXP_0006, Lin Wei, Electromagnetism;, PhD, 8, -01:00",
+   "output": "EXP_0005, David Miller, Computer Programming; Electromagnetism; Image transformation;, Masters, 5, +00:00\nEXP_0006, Lin Wei, Electromagnetism;, PhD, 8, -01:00\nEXP_0004, Elena Rostova, Electromagnetism; Mathematics;, Masters, 15, -02:00\n",
+   "comment": "`EXP_0005` is the committee chair and shows up first in the output.  Eliminate expert `EXP_0002` because the domain does not match the criteria.  Eliminate expert `EXP_0003` because the `Time Zone` doesn’t match the criteria.  Expert `EXP_0006` is the only expert that fits the criteria and has a `PhD`.  The following experts meet the criteria, `EXP_0001`, `EXP_0004` and have `Masters` degrees. `EXP_0004` is chosen because of `Years of Experience`."
+  }
+ ],
+ "attachments": []
+}

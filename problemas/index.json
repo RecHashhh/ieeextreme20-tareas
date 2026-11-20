@@ -1,0 +1,162 @@
+[
+ {
+  "order": 1,
+  "slug": "welcome-to-ieeextreme-20",
+  "title": "Welcome to IEEEXtreme 20.0",
+  "folder": "01-welcome-to-ieeextreme-20",
+  "kind": "standard",
+  "pointsWorth": 100.0
+ },
+ {
+  "order": 2,
+  "slug": "even-signal-windows",
+  "title": "Even Signal Windows",
+  "folder": "02-even-signal-windows",
+  "kind": "standard",
+  "pointsWorth": 51.88
+ },
+ {
+  "order": 3,
+  "slug": "lunar-giant",
+  "title": "Lunar Giant",
+  "folder": "03-lunar-giant",
+  "kind": "standard",
+  "pointsWorth": 80.06
+ },
+ {
+  "order": 4,
+  "slug": "ieee-global-expert-selection-challenge",
+  "title": "IEEE Global Expert Selection Challenge",
+  "folder": "04-ieee-global-expert-selection-challenge",
+  "kind": "standard",
+  "pointsWorth": 75.73
+ },
+ {
+  "order": 5,
+  "slug": "shroud",
+  "title": "Shroud",
+  "folder": "05-shroud",
+  "kind": "game",
+  "pointsWorth": 77.03
+ },
+ {
+  "order": 6,
+  "slug": "encrypted-thresholds",
+  "title": "Encrypted Thresholds",
+  "folder": "06-encrypted-thresholds",
+  "kind": "standard",
+  "pointsWorth": 64.91
+ },
+ {
+  "order": 7,
+  "slug": "clue-duel",
+  "title": "Clue Duel",
+  "folder": "07-clue-duel",
+  "kind": "game",
+  "pointsWorth": 66.88
+ },
+ {
+  "order": 8,
+  "slug": "one-junction-box",
+  "title": "One Junction Box",
+  "folder": "08-one-junction-box",
+  "kind": "standard",
+  "pointsWorth": 69.73
+ },
+ {
+  "order": 9,
+  "slug": "monotone-tree",
+  "title": "Monotone Tree",
+  "folder": "09-monotone-tree",
+  "kind": "standard",
+  "pointsWorth": 69.37
+ },
+ {
+  "order": 10,
+  "slug": "at-most-one-cover",
+  "title": "At Most One Cover",
+  "folder": "10-at-most-one-cover",
+  "kind": "standard",
+  "pointsWorth": 66.87
+ },
+ {
+  "order": 11,
+  "slug": "overclock-in-night-city",
+  "title": "Overclock in Night City",
+  "folder": "11-overclock-in-night-city",
+  "kind": "standard",
+  "pointsWorth": 67.79
+ },
+ {
+  "order": 12,
+  "slug": "rooted-vector",
+  "title": "Rooted Vector",
+  "folder": "12-rooted-vector",
+  "kind": "standard",
+  "pointsWorth": 72.5
+ },
+ {
+  "order": 13,
+  "slug": "auction-duel",
+  "title": "Auction Duel",
+  "folder": "13-auction-duel",
+  "kind": "game",
+  "pointsWorth": 83.02
+ },
+ {
+  "order": 14,
+  "slug": "a-blueprint-or-a-schedule",
+  "title": "A Blueprint or a Schedule",
+  "folder": "14-a-blueprint-or-a-schedule",
+  "kind": "standard",
+  "pointsWorth": 74.24
+ },
+ {
+  "order": 15,
+  "slug": "two-networks-one-emergency",
+  "title": "Two Networks, One Emergency",
+  "folder": "15-two-networks-one-emergency",
+  "kind": "standard",
+  "pointsWorth": 78.93
+ },
+ {
+  "order": 16,
+  "slug": "dots-and-boxes",
+  "title": "Dots and Boxes",
+  "folder": "16-dots-and-boxes",
+  "kind": "game",
+  "pointsWorth": 89.26
+ },
+ {
+  "order": 17,
+  "slug": "flip-7",
+  "title": "Flip 7",
+  "folder": "17-flip-7",
+  "kind": "interactive",
+  "pointsWorth": 74.34
+ },
+ {
+  "order": 18,
+  "slug": "deliveries-in-the-kingdom",
+  "title": "Deliveries in the Kingdom",
+  "folder": "18-deliveries-in-the-kingdom",
+  "kind": "standard",
+  "pointsWorth": 75.91
+ },
+ {
+  "order": 19,
+  "slug": "clockwise-checkpoints",
+  "title": "Clockwise Checkpoints",
+  "folder": "19-clockwise-checkpoints",
+  "kind": "standard",
+  "pointsWorth": 72.97
+ },
+ {
+  "order": 20,
+  "slug": "typo-bowl",
+  "title": "Typo Bowl",
+  "folder": "20-typo-bowl",
+  "kind": "standard",
+  "pointsWorth": 76.75
+ }
+]

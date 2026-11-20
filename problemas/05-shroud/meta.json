@@ -1,0 +1,31 @@
+{
+ "order": 5,
+ "slug": "shroud",
+ "title": "Shroud",
+ "folder": "05-shroud",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/shroud/",
+ "kind": "game",
+ "badges": [
+  "Game",
+  "AI allowed",
+  "Recorded"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 77.03,
+ "timeLimitMs": 4000,
+ "timeLimitShownMs": 10000,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "6 6 1 1 4 1 1\n",
+   "output": ""
+  },
+  {
+   "index": 2,
+   "input": "8 8 2 2 10 0 2\n",
+   "output": ""
+  }
+ ],
+ "attachments": []
+}

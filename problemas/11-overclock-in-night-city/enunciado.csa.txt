@@ -1,0 +1,33 @@
+In the neon-drenched sprawl of *Night City*, the ripperdoc *Dr. Viktor Vektor* is about to install a *Sandevistan* into *David Martinez*. Every extra point of base rating makes the implant more dangerous, so Viktor wants the weakest model that still does the job.
+
+To test it, *Lucy* loads a braindance training simulation with $$N$$ *Arasaka squads*. The $$i$$-th squad has $$a_i$$ soldiers. David and a simulated *Adam Smasher* take turns, and David moves first.
+
+- *David's turn.* Let $$k$$ be the number of turns David has already taken ($$k = 0$$ on his first turn). He chooses a squad that still has soldiers and takes out between $$1$$ and $$X + k$$ of its soldiers, inclusive, where $$X$$ is the base rating of the Sandevistan. If the squad has fewer than $$X + k$$ soldiers, he may take out all of them. The overclock builds up with every activation, so David's limit grows by one each turn: $$X$$, then $$X+1$$, then $$X+2$$, and so on.
+
+- *Smasher's turn.* He chooses any squad and calls in reinforcements, *doubling* its size: a squad with $$z$$ soldiers becomes a squad with $$2z$$ soldiers. Doubling an empty squad leaves it empty.
+
+If all squads are empty right after David's turn, the simulation ends immediately.
+
+This is a friendly training run, so nobody wins or loses. However, Smasher wants the simulation to last as long as possible, and it may even go on forever. David wants it to end. Both play optimally.
+
+Viktor asks: what is the *minimum positive integer* $$X$$ such that David can force the simulation to end after a finite number of turns, no matter how Smasher plays?
+
+It can be proven that such a value of $$X$$ always exists.
+
+#2 Standard input
+
+The first line contains an integer $$N$$, the number of squads.
+
+The second line contains $$N$$ integers $$a_1, a_2, \ldots, a_N$$, the initial sizes of the squads.
+
+#2 Standard output
+
+Print a single integer, the minimum positive integer $$X$$ for which David can force the simulation to end.
+
+#2 Constraints and notes
+
+- $$1 \le N \le 10^6$$.
+
+- $$1 \le a_i \le 10^9$$.
+
+<TaskExamples />

@@ -1,0 +1,27 @@
+Your task is to produce the same output as the program encoded in the attached <Link value="transition table" href="https://publicmedia1.csacademy.com/public/transitions.tsv">.
+
+#2 Standard input
+
+The first line of input contains an integer $$N$$.
+
+Each line of the next $$N$$ lines of the input is a testcase.
+
+A testcase is a list of space separated integers $$C_1, \ldots, C_k$$.
+
+#2 Standard output
+
+A single integer per each one of the $$N$$ testcases.
+
+#2 Constraints and notes
+
+- $$1 \le N \le 10$$.
+
+- $$0 \le C_i \le 1000$$.
+
+- $$10\%$$ of the test cases are easy: with a single number $$C_1 < 25$$ per testcase.
+
+- $$40\%$$ of the test cases are medium: $$C_i < 25$$.
+
+- $$50\%$$ of the test cases are hard: with no restriction other than the constraints above.
+
+<TaskExamples />

@@ -1,0 +1,35 @@
+{
+ "order": 14,
+ "slug": "a-blueprint-or-a-schedule",
+ "title": "A Blueprint or a Schedule",
+ "folder": "14-a-blueprint-or-a-schedule",
+ "sourceUrl": "https://csacademy.com/ieeextreme20/task/a-blueprint-or-a-schedule/",
+ "kind": "standard",
+ "badges": [
+  "AI prohibited",
+  "Locked editor"
+ ],
+ "scoreType": "Partial scoring",
+ "pointsWorth": 74.24,
+ "timeLimitMs": 1000,
+ "timeLimitShownMs": 2500,
+ "memoryLimitMB": 256,
+ "examples": [
+  {
+   "index": 1,
+   "input": "3 3 3\n1 2\n1 3\n2 3\n2 1\n2 3\n",
+   "output": "TREE\n3 1 2 \n"
+  },
+  {
+   "index": 2,
+   "input": "3 2 3\n1 2\n1 3\n1 2\n2 3\n",
+   "output": "COLOR\n1 2 2 \n"
+  },
+  {
+   "index": 3,
+   "input": "1 0 1\n",
+   "output": "TREE\n1 \n"
+  }
+ ],
+ "attachments": []
+}

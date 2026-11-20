@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IEEEXtreme 20.0 · Banco de tareas</title>
+<meta name="description" content="Los 20 enunciados de IEEEXtreme 20.0 con ejemplos, capturas originales y descargas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Layout: indice de tareas fijo a la izquierda (lista tipo "problem set"), enunciado legible a la derecha. */
+:root {
+  --bg: #f5f6fa; --panel: #ffffff; --ink: #161b2b; --muted: #5b6378; --line: #dde1eb;
+  --accent: #2443d6; --accent-soft: #e6eafc; --code-bg: #f0f2f7;
+  --red: #b42335; --red-soft: #fbe7ea; --amber: #8a5a00; --amber-soft: #fbf0d6;
+  --green: #17734a; --green-soft: #e1f4ea; --violet: #6236c4; --violet-soft: #eee8fc;
+  --teal: #0b6f78; --teal-soft: #dff3f4; --slate: #4a5468; --slate-soft: #e9ecf2;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1220; --panel: #151a2b; --ink: #e5e8f1; --muted: #9aa3b8; --line: #283049;
+    --accent: #8fa2ff; --accent-soft: #222c52; --code-bg: #1c2236;
+    --red: #ff8f9c; --red-soft: #3a1c24; --amber: #f0c15c; --amber-soft: #33290f;
+    --green: #6fd3a3; --green-soft: #14322a; --violet: #b9a0ff; --violet-soft: #2a2148;
+    --teal: #6fd0d8; --teal-soft: #12313a; --slate: #b4bccd; --slate-soft: #232a3d;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.6 var(--f-body); }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.topbar {
+  position: sticky; top: 0; z-index: 20; background: var(--panel); border-bottom: 1px solid var(--line);
+  padding: 10px max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left));
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.brand { font: 700 1.15rem/1.2 var(--f-display); letter-spacing: -.01em; }
+.brand small { display: block; font: 500 .72rem/1.3 var(--f-body); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+.topbar .spacer { flex: 1; }
+.btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 6px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink); text-decoration: none;
+  font: 500 .875rem/1.2 var(--f-body); cursor: pointer; white-space: nowrap;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--panel); }
+.btn.primary:hover { filter: brightness(1.08); color: var(--panel); }
+.btn svg { width: 15px; height: 15px; }
+
+.layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); min-height: calc(100vh - 60px); }
+.sidebar {
+  border-right: 1px solid var(--line); background: var(--panel); position: sticky; top: 61px;
+  height: calc(100vh - 61px); overflow-y: auto; padding: 14px 10px 24px;
+}
+.filter { display: flex; gap: 6px; flex-wrap: wrap; padding: 0 6px 10px; }
+.filter button {
+  border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 999px;
+  padding: 3px 10px; font: 500 .78rem var(--f-body); cursor: pointer;
+}
+.filter button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.tlist { list-style: none; margin: 0; padding: 0; }
+.tlist a {
+  display: grid; grid-template-columns: 30px 1fr; gap: 2px 8px; padding: 8px 8px; border-radius: 6px;
+  text-decoration: none; color: var(--ink);
+}
+.tlist a:hover { background: var(--bg); }
+.tlist a[aria-current="page"] { background: var(--accent-soft); }
+.tlist .num { font: 500 .8rem/1.5 var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.tlist .name { font-weight: 500; line-height: 1.3; }
+.tlist .sub { grid-column: 2; font-size: .75rem; color: var(--muted); }
+.mobile-pick { display: none; }
+
+main { padding: 28px max(16px, env(safe-area-inset-right)) 64px max(16px, env(safe-area-inset-left)); min-width: 0; }
+.wrap { max-width: 860px; margin: 0 auto; }
+.eyebrow { font: 500 .75rem var(--f-mono); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+h1.title { font: 700 clamp(1.8rem, 4vw, 2.5rem)/1.1 var(--f-display); letter-spacing: -.02em; margin: 6px 0 12px; text-wrap: balance; }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.badge { font: 500 .78rem/1 var(--f-body); padding: 5px 9px; border-radius: 4px; }
+.b-ai-prohibited { background: var(--red-soft); color: var(--red); }
+.b-ai-allowed { background: var(--green-soft); color: var(--green); }
+.b-locked-editor { background: var(--amber-soft); color: var(--amber); }
+.b-recorded { background: var(--slate-soft); color: var(--slate); }
+.b-game { background: var(--violet-soft); color: var(--violet); }
+.b-interactive { background: var(--teal-soft); color: var(--teal); }
+.specs {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: 16px;
+}
+.specs div { background: var(--panel); padding: 10px 14px; }
+.specs dt { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.specs dd { margin: 2px 0 0; font: 500 1rem var(--f-mono); font-variant-numeric: tabular-nums; }
+.specs dd small { font: .72rem var(--f-body); color: var(--muted); }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); margin-bottom: 22px; overflow-x: auto; }
+.tabs button {
+  border: 0; background: none; padding: 10px 14px; font: 500 .92rem var(--f-body); color: var(--muted);
+  border-bottom: 2px solid transparent; margin-bottom: -1px; cursor: pointer; white-space: nowrap;
+}
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+
+.statement { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 26px clamp(16px, 4vw, 36px); }
+.statement p { margin: 0 0 .8em; }
+.statement h2 { font: 700 1.45rem/1.2 var(--f-display); margin: 1.4em 0 .5em; letter-spacing: -.01em; }
+.statement h2:first-child { margin-top: 0; }
+.statement ul, .statement ol { margin: 0 0 .9em; padding-left: 1.4em; }
+.statement li { margin: .15em 0; }
+.statement code { font: .86em var(--f-mono); background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+.statement pre.code {
+  font: .86rem/1.5 var(--f-mono); background: var(--code-bg); border-radius: 6px; padding: 10px 14px 10px 0;
+  overflow-x: auto; counter-reset: ln; margin: 0 0 1em;
+}
+.statement pre.code span { display: block; padding-left: 3.2em; position: relative; min-height: 1.5em; }
+.statement pre.code span::before {
+  counter-increment: ln; content: counter(ln); position: absolute; left: 0; width: 2.4em; text-align: right;
+  color: var(--muted); opacity: .7;
+}
+.statement .katex { font-size: 1.05em; }
+.statement td.expl { overflow-wrap: anywhere; }
+.examples { width: 100%; border-collapse: collapse; margin-top: 1.2em; table-layout: fixed; }
+.examples th { text-align: left; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.examples td { vertical-align: top; padding: 10px; border-bottom: 1px solid var(--line); }
+.examples .io-label { display: none; }
+.examples.has-expl th:nth-child(-n+2), .examples.has-expl td:nth-child(-n+2) { width: 30%; }
+.examples td.expl { font-size: .92rem; }
+.examples td.expl p:last-child, .examples td.expl ul:last-child { margin-bottom: 0; }
+pre.io { margin: 0; font: .85rem/1.5 var(--f-mono); background: var(--code-bg); border-radius: 6px; padding: 8px 10px; overflow-x: auto; white-space: pre; }
+
+.original img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.compare { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.compare h3 { font: 600 .8rem var(--f-body); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 8px; }
+.compare .statement { padding: 18px; font-size: .9rem; }
+.note { font-size: .85rem; color: var(--muted); margin: 0 0 14px; }
+.wrap.wide { max-width: 1400px; }
+
+.home h1 { font: 700 clamp(2rem, 5vw, 3rem)/1.05 var(--f-display); letter-spacing: -.02em; margin: 4px 0 10px; }
+.home .lead { color: var(--muted); max-width: 62ch; margin: 0 0 22px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.card {
+  display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; background: var(--panel);
+  border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: var(--ink);
+}
+.card:hover { border-color: var(--accent); }
+.card .num { font: 500 .78rem var(--f-mono); color: var(--muted); }
+.card .name { font: 600 1.05rem/1.25 var(--f-display); }
+.card .meta { font-size: .8rem; color: var(--muted); margin-top: auto; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .sidebar { display: none; }
+  .mobile-pick { display: block; margin-bottom: 16px; }
+  .mobile-pick select { width: 100%; padding: 9px; font: 1rem var(--f-body); border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); }
+  .compare { grid-template-columns: minmax(0, 1fr); }
+  .specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .examples thead { display: none; }
+  .examples td { display: block; border: 0; padding: 4px 0; }
+  .examples tr { display: block; border-bottom: 1px solid var(--line); padding: 8px 0; }
+  .examples .io-label { display: block; font-size: .75rem; color: var(--muted); margin-bottom: 3px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="#" style="color:inherit;text-decoration:none"><div class="brand"><small>Banco de tareas</small>IEEEXtreme 20.0</div></a>
+  <div class="spacer"></div>
+  <a class="btn primary" href="descargas/ieeextreme20-tareas.zip" download>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+    Descargar todo (.zip)
+  </a>
+</header>
+<div class="layout">
+  <nav class="sidebar" aria-label="Tareas">
+    <div class="filter" id="filter" role="group" aria-label="Filtrar por tipo">
+      <button data-k="all" aria-pressed="true">Todas</button>
+      <button data-k="standard" aria-pressed="false">Estándar</button>
+      <button data-k="interactive" aria-pressed="false">Interactiva</button>
+      <button data-k="game" aria-pressed="false">Juego</button>
+    </div>
+    <ul class="tlist" id="tlist"></ul>
+  </nav>
+  <main id="main"></main>
+</div>
+<script>window.TASKS = /*DATA*/;</script>
+<script>
+const KIND = { standard: "Estándar", interactive: "Interactiva", game: "Juego contra bots" };
+const DL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>';
+const T = window.TASKS;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let filter = "all", tab = "enunciado";
+
+function renderList(cur) {
+  $("#tlist").innerHTML = T.filter((t) => filter === "all" || t.kind === filter).map((t) => `
+    <li><a href="#${t.slug}" ${t.slug === cur ? 'aria-current="page"' : ""}>
+      <span class="num">${String(t.order).padStart(2, "0")}</span><span class="name">${esc(t.title)}</span>
+      <span class="sub">${KIND[t.kind]} · ${t.pointsWorth.toFixed(2)} pts</span></a></li>`).join("");
+}
+function picker(cur) {
+  return `<div class="mobile-pick"><label class="eyebrow" for="pick">Tarea</label>
+    <select id="pick">${['<option value="">Inicio</option>'].concat(T.map((t) =>
+      `<option value="${t.slug}" ${t.slug === cur ? "selected" : ""}>${String(t.order).padStart(2, "0")} · ${esc(t.title)}</option>`)).join("")}</select></div>`;
+}
+function badges(t) {
+  return t.badges.map((b) => `<span class="badge b-${b.toLowerCase().replace(/ /g, "-")}">${esc(b)}</span>`).join("");
+}
+function math(el) {
+  if (window.renderMathInElement) renderMathInElement(el, { delimiters: [{ left: "\\(", right: "\\)", display: false }], throwOnError: false });
+  else setTimeout(() => math(el), 150);
+}
+function home() {
+  $("#main").innerHTML = `<div class="wrap wide home">${picker("")}
+    <div class="eyebrow">CSAcademy · 24 horas · ${T.length} tareas</div>
+    <h1>Banco de tareas de IEEEXtreme 20.0</h1>
+    <p class="lead">Los enunciados completos de la competencia, con sus ejemplos de entrada y salida y una captura de la página original para comparar. Cada tarea se puede descargar por separado o todas juntas en un .zip.</p>
+    <div class="grid">${T.map((t) => `<a class="card" href="#${t.slug}"><span class="num">TAREA ${String(t.order).padStart(2, "0")}</span>
+      <span class="name">${esc(t.title)}</span><span class="badges" style="margin:0">${badges(t)}</span>
+      <span class="meta">${KIND[t.kind]} · ${t.timeLimitMs} ms · ${t.memoryLimitMB} MB · ${t.pointsWorth.toFixed(2)} pts</span></a>`).join("")}</div></div>`;
+}
+function task(t) {
+  const base = `problemas/${t.folder}/`;
+  const dl = [
+    `<a class="btn primary" href="descargas/${t.folder}.zip" download>${DL} Tarea completa (.zip)</a>`,
+    `<a class="btn" href="${base}enunciado.md" download>${DL} Enunciado (.md)</a>`,
+    `<a class="btn" href="${base}original.png" download>${DL} Captura original</a>`,
+    ...t.examples.map((e) => `<a class="btn" href="${base}ejemplos/sample${e.index}.in" download>${DL} sample${e.index}.in</a>`),
+    ...t.attachments.map((a) => `<a class="btn" href="${base}adjuntos/${a}" download>${DL} ${esc(a)}</a>`),
+  ].join("");
+  const shown = t.timeLimitShownMs && t.timeLimitShownMs !== t.timeLimitMs ? `<small> · ${t.timeLimitShownMs} ms en la web</small>` : "";
+  const panes = {
+    enunciado: `<article class="statement">${t.html}</article>`,
+    original: `<p class="note">Captura tomada de la página original de CSAcademy.</p><div class="original"><img src="${base}original.png" alt="Captura del enunciado original de ${esc(t.title)}" loading="lazy"></div>`,
+    comparar: `<p class="note">Izquierda: nuestra versión generada desde los datos. Derecha: la página original.</p>
+      <div class="compare"><div><h3>Nuestra versión</h3><article class="statement">${t.html}</article></div>
+      <div class="original"><h3>Original</h3><img src="${base}original.png" alt="Captura original" loading="lazy"></div></div>`,
+  };
+  $("#main").innerHTML = `<div class="wrap ${tab === "comparar" ? "wide" : ""}">${picker(t.slug)}
+    <div class="eyebrow">Tarea ${String(t.order).padStart(2, "0")} de ${T.length} · ${KIND[t.kind]}</div>
+    <h1 class="title">${esc(t.title)}</h1>
+    <div class="badges">${badges(t)}</div>
+    <dl class="specs">
+      <div><dt>Tiempo (base)</dt><dd>${t.timeLimitMs} ms${shown}</dd></div>
+      <div><dt>Memoria</dt><dd>${t.memoryLimitMB} MB</dd></div>
+      <div><dt>Puntos</dt><dd>${t.pointsWorth.toFixed(2)}</dd></div>
+      <div><dt>Puntuación</dt><dd style="font-family:var(--f-body)">${esc(t.scoreType)}</dd></div>
+    </dl>
+    <div class="actions">${dl}</div>
+    <div class="tabs" role="tablist">${["enunciado", "original", "comparar"].map((k) =>
+      `<button role="tab" data-tab="${k}" aria-selected="${k === tab}">${{ enunciado: "Enunciado", original: "Original (captura)", comparar: "Comparar lado a lado" }[k]}</button>`).join("")}</div>
+    <div id="pane">${panes[tab]}</div></div>`;
+  math($("#pane"));
+}
+function route() {
+  const slug = decodeURIComponent(location.hash.slice(1));
+  const t = T.find((x) => x.slug === slug);
+  renderList(t ? t.slug : "");
+  t ? task(t) : home();
+  const pick = $("#pick");
+  if (pick) pick.onchange = () => { location.hash = pick.value; };
+}
+document.addEventListener("click", (e) => {
+  const tb = e.target.closest("[data-tab]");
+  if (tb) { tab = tb.dataset.tab; route(); }
+  const fb = e.target.closest("#filter button");
+  if (fb) {
+    filter = fb.dataset.k;
+    document.querySelectorAll("#filter button").forEach((b) => b.setAttribute("aria-pressed", b === fb));
+    renderList(location.hash.slice(1));
+  }
+});
+window.addEventListener("hashchange", () => { route(); window.scrollTo(0, 0); });
+route();
+</script>
+</body>
+</html>
